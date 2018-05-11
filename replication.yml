@@ -1,0 +1,30 @@
+---
+apiVersion: v1
+kind: ReplicaSet
+metadata: 
+   name: myreplicaset
+spec: 
+  replicas: 2
+  selector: 
+     matchLabels: 
+       app: myreplicaset
+   template: 
+      metadata: 
+         labels: 
+           app: myreplicaset
+      spec: 
+         containers: 
+
+         - name: httpd
+           image: httpd
+           ports: 
+              - containerPort: 8080
+           imagePullPolicy: Always
+
+         - name: nginx
+           image: nginx
+           ports: 
+             - containerPort: 8080
+           imagePullPolicy: Always
+
+
