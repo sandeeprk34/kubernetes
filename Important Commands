@@ -19,7 +19,7 @@
 
 	
 	Kubectl  create  -f  <file.yml>  --<namespace>   ----- command
-	Kubectl run mypod1 --image=nginx   --replicas=2   -----  command
+	Kubectl run mypod1 --image=nginx  --port=80  --replicas=2   -----  command
 
 #####POD Commands
   Kubcectl get pods    ####Displays the pods list
