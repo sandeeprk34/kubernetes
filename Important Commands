@@ -15,22 +15,20 @@
 ######2 Ways to create PODS as follows
 
 	kubectl create	---    It requires yaml file  ---   Can create pods with multiple containers in each pod --  Deployment object is not automatically created but need to specify explicitly
-  Kubectl run     -----    No yaml file is required ----- Can create  pods with only one container each pod ---   	Deployment object is automatically created.(That means when you delete the pod the deployment object automatically creates the pod).So when you want to delete a POD, delete deployment first.
+        Kubectl run     -----    No yaml file is required ----- Can create  pods with only one container each pod -- Deployment object is automatically created.(That means when you delete the pod the deployment object automatically creates the pod).So when you want to delete a POD, delete deployment first.
 
 	
 	Kubectl  create  -f  <file.yml>  --<namespace>   ----- command
 	Kubectl run mypod1 --image=nginx   --replicas=2   -----  command
 
-
 #####POD Commands
   Kubcectl get pods    ####Displays the pods list
   Kubcectl get pod <podname>
   Kubectl describe pod  <pod name> ####Describes a particular pod
-  Kubectl delete pod <podname> ###Delete the pod
+  Kubectl delete pods <podname> ###Delete the pod
   Kubectl get deploy ####Displays the deploy list
-  Kubectl delete deploy <deployname> ###3Delete the deplpyment object
+  Kubectl delete deploy <deployname> ### Delete the deplpyment object
   Kubectl get pods  -o wide   ####To list the IP of pods
   Kubectl logs <podname>
-
   kubectl get pods --output=wide   ### To check the pods and the nodes they are  running on 
-  kubectl scale --replicas=1 Deployment/<deploymentname> ####To scale out and scale in  the replicas 
+  kubectl scale --replicas=1 Deployment/<deploymentname> ####To scale out and scale in the pod replicas 
