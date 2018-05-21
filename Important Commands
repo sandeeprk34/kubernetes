@@ -32,3 +32,5 @@
   Kubectl logs <podname>
   kubectl get pods --output=wide   ### To check the pods and the nodes they are  running on 
   kubectl scale --replicas=1 Deployment/<deploymentname> ####To scale out and scale in the pod replicas 
+  kubectl get service <sevicename> 
+  kubectl describe service <servicename>  
