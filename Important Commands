@@ -34,3 +34,4 @@
   kubectl scale --replicas=1 Deployment/<deploymentname> ####To scale out and scale in the pod replicas 
   kubectl get service <sevicename> 
   kubectl describe service <servicename>  
+  
