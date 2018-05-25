@@ -14,12 +14,14 @@
         
 ######2 Ways to create PODS as follows
 
-	kubectl create	---    It requires yaml file  ---   Can create pods with multiple containers in each pod --  Deployment object is not automatically created but need to specify explicitly
-        Kubectl run     -----    No yaml file is required ----- Can create  pods with only one container each pod -- Deployment object is automatically created.(That means when you delete the pod the deployment object automatically creates the pod).So when you want to delete a POD, delete deployment first.
-
+	1.kubectl create	---    It requires yaml file  ---   Can create pods with multiple containers in each pod --  Deployment object is not automatically created but need to specify explicitly
+                    Kubectl  create  -f  <file.yml>  --<namespace>   ----- command
 	
-	Kubectl  create  -f  <file.yml>  --<namespace>   ----- command
-	Kubectl run mypod1 --image=nginx  --port=80  --replicas=2   -----  command
+	
+	2.Kubectl run     -----    No yaml file is required ----- Can create  pods with only one container for each pod -- Deployment object is automatically created.(That means when you delete the pod the deployment object automatically creates the pod).So when you want to delete a POD, delete deployment first.
+	          Kubectl run <mypod1> --image=nginx  --port=80  --replicas=2   -----  command
+		  kubectl expose deployment  <deployementname> --LoadBalancer   ------ It creates service for deployment to acees the application outside the cluster.
+	
 
 #####POD Commands
   Kubcectl get pods    ####Displays the pods list
