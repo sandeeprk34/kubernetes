@@ -21,7 +21,7 @@
 	2.Kubectl run     -----    No yaml file is required ----- Can create  pods with only one container for each pod -- Deployment object is automatically created.(That means when you delete the pod the deployment object automatically creates the pod).So when you want to delete a POD, delete deployment first.
 	          Kubectl run <mypod1> --image=nginx  --port=80  --replicas=2   -----  command
 		  kubectl expose deployment  <deployementname> --LoadBalancer   ------ It creates service for deployment to acees the application outside the cluster.
-	
+	          kubectl expose rc example --port=8765 --target-port=9376 \ --name=example-service --type=LoadBalancer
 
 #####POD Commands
   Kubcectl get pods    ####Displays the pods list
@@ -29,6 +29,10 @@
   Kubectl describe pod  <pod name> ####Describes a particular pod
   Kubectl delete pods <podname> ###Delete the pod
   Kubectl get deploy ####Displays the deploy list
+  kubectl get deployments <deploymentname>
+  kubectl describe deployments  <deploymentname>
+  kubectl get replicasets
+  kubectl describe replicasets
   Kubectl delete deploy <deployname> ### Delete the deplpyment object
   Kubectl get pods  -o wide   ####To list the IP of pods
   Kubectl logs <podname>
